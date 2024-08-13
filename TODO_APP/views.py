@@ -12,3 +12,7 @@ def add_task(request):
             Task.objects.create(title=title)
         return redirect('list')
     return render(request, 'add_task.html')
+
+def list(request):
+    tasks = Task.objects.all()
+    return render(request, 'add_list.html', {'tasks': tasks})
